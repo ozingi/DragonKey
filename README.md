@@ -26,7 +26,7 @@ DragonKey是用.NET MAUI写的跨平台应用，目前很简陋，只能当作�
 
 #### 下载链接
 进qq群下载：273145623
-也可以自己在GitHub下载：[microG_GSync](https://github.com/ozingi/DragonKey)
+也可以自己在GitHub下载：[DragonKey](https://github.com/ozingi/DragonKey)
 
 ### 🥰如果喜欢你也可以请我喝果汁🥰
 ### [打赏 / Donate](https://ozingi.github.io/img/payment/Alipay.jpg)
