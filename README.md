@@ -8,8 +8,9 @@ DragonKey是用.NET MAUI写的跨平台应用，目前很简陋，只能当作�
   <tr>
   </tr>
   <tr>
-    <td valign="top"><img src="https://img-blog.csdnimg.cn/5f95654f03f9490b9e69e53e41bce560.png"></td>
-    <td valign="top"><img src="https://img-blog.csdnimg.cn/e342d70f6f984fcc93d06529ae97411e.png"></td>
+    <td valign="top"><img src="https://ozingi.github.io/img/dragonkey/droid_about.png"></td>
+    <td valign="top"><img src="https://ozingi.github.io/img/dragonkey/droid_home.png"></td>
+    <td valign="top"><img src="https://ozingi.github.io/img/dragonkey/droid_totp.png"></td>
   </tr>
  </table>
 
@@ -19,8 +20,9 @@ DragonKey是用.NET MAUI写的跨平台应用，目前很简陋，只能当作�
   <tr>
   </tr>
   <tr>
-    <td valign="top"><img src="https://img-blog.csdnimg.cn/5f95654f03f9490b9e69e53e41bce560.png"></td>
-    <td valign="top"><img src="https://img-blog.csdnimg.cn/e342d70f6f984fcc93d06529ae97411e.png"></td>
+    <td valign="top"><img src="https://ozingi.github.io/img/dragonkey/pc_about.png"></td>
+    <td valign="top"><img src="https://ozingi.github.io/img/dragonkey/pc_home.png"></td>
+    <td valign="top"><img src="https://ozingi.github.io/img/dragonkey/pc_totp.png"></td>
   </tr>
  </table>
 
