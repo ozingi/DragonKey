@@ -1,6 +1,6 @@
 # DragonKey
 ## DragonKey是什么？
-DragonKey是用.NET MAUI写的跨平台应用，目前很简陋，只能当作个2FA认证应用，比如代替Google身份验证器 Binance、OKX、Bitfinex、Bittrex等的二次认证。但未来DragonKey将不仅仅是密码管理器...
+DragonKey是用.NET MAUI写的跨平台应用，目前很简陋，只能当作个2FA认证应用，比如代替Google身份验证器给Binance、OKX、Bitfinex、Bittrex等的二次认证。但未来DragonKey将不仅仅是密码管理器...
 ## 运行截图
 ### android
 
