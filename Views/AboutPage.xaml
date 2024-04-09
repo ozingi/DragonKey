@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:DragonKey.Models.core"
+             x:Class="DragonKey.Views.AboutPage"
+             Title="关于">
+
+    <ContentPage.BindingContext>
+        <models:About />
+    </ContentPage.BindingContext>
+    <Grid>
+    <VerticalStackLayout>
+            <VerticalStackLayout Spacing="10" HorizontalOptions="Fill"  BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}" Padding="10" >
+                <VerticalStackLayout.Shadow>
+                    <Shadow Brush="{AppThemeBinding Light={StaticResource Gray400},Dark={StaticResource White}}"
+                Offset="0,10"
+                Radius="5"
+                Opacity="0.5" />
+                </VerticalStackLayout.Shadow>
+                <HorizontalStackLayout HorizontalOptions="Center">
+
+                    <Image Source="appiconfg.png"
+                       SemanticProperties.Description="这是DragonKey的logo!"
+                       HeightRequest="64" 
+                       />
+                    <Label FontSize="22" FontAttributes="Bold" Text="{Binding Title}" VerticalOptions="Center"  />
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+            <Label Text="{Binding Message}" Margin="20"/>
+            <Label Text="项目地址" FontAttributes="Bold"  FontSize="Subtitle" Margin="20,0">
+            </Label>
+        
+            <Border HeightRequest="2" Background="{StaticResource DragonRed200}" Margin="15" StrokeThickness="0"/>
+            <HorizontalStackLayout>
+                <Label Text="Github:" FontSize="Subtitle" Margin="20,0" VerticalOptions="Center">
+                </Label>
+                <Button ImageSource="github.png" HeightRequest="32" WidthRequest="32" ContentLayout="0"  CornerRadius="50"  Clicked="LearnMore_Clicked" BackgroundColor="White" Padding="0" Margin="0">
+                    <Button.Shadow>
+                        <Shadow Brush="{AppThemeBinding Light={StaticResource Gray400},Dark={StaticResource White}}"
+                        Offset="0,10"
+                        Radius="5"
+                        Opacity="0.5" />
+                    </Button.Shadow>
+                </Button>
+            </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+    <Label FontSize="Small" Text="{Binding Version}" TextColor="{StaticResource Gray200}" VerticalTextAlignment="End" VerticalOptions="Fill" HorizontalOptions="Center"/>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Models="clr-namespace:DragonKey.Models.core"
+             x:Class="DragonKey.Views.ViewOtpPage"
+             Title="">
+
+    <!--Add an item to the toolbar-->
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Text="Update" Clicked="Update_Clicked" IconImageSource="edit_key.png"/>-->
+    </ContentPage.ToolbarItems>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}" Padding="20,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="220"/>
+            </Grid.ColumnDefinitions>
+            <Border  
+                Grid.Column="0"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 50"
+                HeightRequest="80"
+                WidthRequest="80"
+                Margin="10,0,0,0">
+                <Image Source="secretKey_ico.png"
+                    Aspect="Fill"
+                    HeightRequest="80"
+                    WidthRequest="80"
+                    />
+            </Border>
+            <Grid Grid.Column="1" Margin="20,20,0,0">
+                <Label Text="{Binding Filename}" FontSize="30" LineBreakMode="TailTruncation"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            
+            <Border StrokeThickness="4"
+                    StrokeShape="RoundRectangle 15,15,15,15"
+                    Padding="10,10"
+                    Margin="8,8">
+                <Border.Stroke>
+                    <LinearGradientBrush EndPoint="0,5">
+                        <GradientStop Color="White"
+                          Offset="0.1" />
+                        <GradientStop Color="#919191"
+                          Offset="1.0" />
+                    </LinearGradientBrush>
+                </Border.Stroke>
+                <Grid>
+                    <!--<ProgressBar x:Name="progressBarEasing" Grid.Row="0" ProgressColor="{StaticResource DragonRed200}" VerticalOptions="Center"  ScaleY="10" BackgroundColor="White" Background="White"/>-->
+                    <Label 
+                    x:Name="fakeCountDown"
+                    Text="{Binding StringFormat='一次性密码代码 {0} s内有效', FakeCountDown}"
+                    FontSize="Body"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Start"   
+                    Padding="10,0,0,0"
+                    />
+                </Grid>
+
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <ProgressBar Grid.Row="0" ProgressColor="{StaticResource DragonRed200}" Progress = "{Binding progressbar}" VerticalOptions="Center" Margin="20,0"/>
+            <Border 
+                Grid.Row="1" 
+                StrokeThickness="4"
+                StrokeShape="RoundRectangle 15,15,15,15"
+                Padding="10,10"
+                Margin="8,8" >
+                <Border.Stroke>
+                    <LinearGradientBrush EndPoint="0,5">
+                        <GradientStop Color="White"
+                          Offset="0.1" />
+                        <GradientStop Color="#919191"
+                          Offset="1.0" />
+                    </LinearGradientBrush>
+                </Border.Stroke>
+                <Label 
+                    ClassId="OtpCode"
+                    Text="{Binding TotpCode}"
+                    TextColor="#db2747"
+                    FontSize="40"
+                    Padding="20,0,0,0"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Start"/>
+            </Border>
+   
+            <Label Grid.Row="3">
+
+            </Label>
+        </Grid>
+
+    </Grid>
+</ContentPage>
