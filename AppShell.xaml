@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="DragonKey.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Views="clr-namespace:DragonKey.Views"
+    Shell.FlyoutBehavior="Disabled"
+   >
+    <!--<Shell.TitleView
+       Height="1000" >
+        <Border HeightRequest="1000">
+            <Label Text="222" TextColor="{StaticResource DragonRed}"></Label>
+        </Border>
+    </Shell.TitleView>-->
+
+        <TabBar >
+        <Tab Title="DragonKey" Icon="home.svg"  >
+ 
+                <ShellContent
+                    ContentTemplate="{DataTemplate Views:HomePage}"
+                    Route="HomePage" />
+            </Tab>
+            <Tab Title="关于" Icon="aboutus.svg">
+                <ShellContent
+                    ContentTemplate="{DataTemplate Views:AboutPage}"
+                    Route="AboutPage"/>
+            </Tab>
+        </TabBar>
+
+        
+
+
+    <ShellContent
+        Title="密码"
+        ContentTemplate="{DataTemplate Views:AllNotesPage}"
+        Route="AllNotesPage"
+        Icon="dotnet_bot.svg"/>
+    <ShellContent
+        Title="密码"
+        ContentTemplate="{DataTemplate Views:ViewOtpPage}"
+        Route="ViewOtpPage"
+        Icon="dotnet_bot.svg"/>
+</Shell>
+

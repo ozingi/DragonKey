@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Models="clr-namespace:DragonKey.Models.core"
+             x:Class="DragonKey.Views.UpdateKeyPage"
+             Title="更新密钥"
+             Shell.BackButtonBehavior="{Binding BackButtonBehavior}">
+    <ContentPage.BindingContext>
+        <Models:AddKey />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Spacing="10" Margin="5">
+        <Border StrokeThickness="4"
+                    StrokeShape="RoundRectangle 15,15,15,15"
+     
+                    Padding="10,10"
+                    Margin="8,8">
+            <Border.Stroke>
+                <LinearGradientBrush EndPoint="0,5">
+                    <GradientStop Color="White"
+                          Offset="0.1" />
+                    <GradientStop Color="#919191"
+                          Offset="1.0" />
+                </LinearGradientBrush>
+            </Border.Stroke>
+            <Editor x:Name="FilenameEditor"
+                Placeholder="输入账户名"
+                Text="{Binding Filename}"
+                HeightRequest="50" />
+            </Border>
+        <Border StrokeThickness="4"
+                    StrokeShape="RoundRectangle 15,15,15,15"
+              
+                    Padding="10,10"
+                    Margin="8,8">
+            <Border.Stroke>
+                <LinearGradientBrush EndPoint="0,5">
+                    <GradientStop Color="White"
+                          Offset="0.1" />
+                    <GradientStop Color="#919191"
+                          Offset="1.0" />
+                </LinearGradientBrush>
+            </Border.Stroke>
+            <Editor x:Name="SecretkeyEditor"
+                Placeholder="输入你的密钥"
+                Text="{Binding SecretKey}"
+                HeightRequest="50" />
+            </Border>
+        <Grid >
+            <Grid HorizontalOptions="Center" ColumnSpacing="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="180"/>
+                    <ColumnDefinition Width="180"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="保存"
+                    Clicked="SaveButton_Clicked"
+                    CornerRadius="15"
+                    HeightRequest="56">
+                    <Button.Shadow>
+                        <Shadow Brush="{AppThemeBinding Light={StaticResource Gray400},Dark={StaticResource White}}"
+                        Offset="0,10"
+                        Radius="5"
+                        Opacity="0.5" />
+                    </Button.Shadow>
+                </Button>
+                <Button Grid.Column="1"
+                    Text="删除"
+                    Clicked="DeleteButton_Clicked" 
+                    CornerRadius="15"
+                    HeightRequest="56">
+                    <Button.Shadow>
+                        <Shadow Brush="{AppThemeBinding Light={StaticResource Gray400},Dark={StaticResource White}}"
+                        Offset="0,10"
+                        Radius="5"
+                        Opacity="0.5" />
+                    </Button.Shadow>
+                </Button>
+      
+            </Grid>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

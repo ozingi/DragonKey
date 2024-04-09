@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DragonKey.Views.HomePage"
+             Title="DragonKey">
+     <!--Add an item to the toolbar-->
+    <ContentPage.ToolbarItems>
+
+        <!--<ToolbarItem Text="Add" Clicked="Add_Clicked" >
+            <ToolbarItem.IconImageSource>
+                <PlatformImage Windows="add_key_windows.png" Default="add_key.png" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>-->
+
+    </ContentPage.ToolbarItems>
+
+    <!--Display notes in a list--> 
+        <CollectionView x:Name="secretKeysCollection"
+                        ItemsSource="{Binding SecretKeys}"
+                        SelectionMode="Single"
+                        SelectionChanged="secretKeysCollection_SelectionChanged"
+>
+
+            <!--Designate how the collection of items are laid out-->
+        <CollectionView.ItemsLayout                         >
+                <LinearItemsLayout Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+
+            <!--Define the appearance of each item in the list-->
+        <CollectionView.ItemTemplate >
+
+            <DataTemplate >
+                
+                <Border StrokeThickness="4"
+                    StrokeShape="RoundRectangle 15,15,15,15"
+                
+                    Padding="10,10"
+                    Margin="8,15,8,0"
+                        >
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup Name="CommonStates">
+                            <VisualState Name="Normal" />
+
+                            <VisualState Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.95" />
+                                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Gray950}}"></Setter>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                    <Border.Stroke>
+                        <LinearGradientBrush EndPoint="0,5">
+                            <GradientStop Color="White"
+                          Offset="0.1" />
+                            <GradientStop Color="#919191"
+                          Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Border.Stroke>
+                    
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="220"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Border  
+                           StrokeThickness="0"
+                           StrokeShape="RoundRectangle 50"
+                           HeightRequest="50"
+                           WidthRequest="50"
+                            Margin="10,0,0,0"
+                           Grid.Column="0">
+                            <Image Source="secretKey_ico.png"
+                                    Aspect="Fill"
+                                    HeightRequest="50"
+                                    WidthRequest="50"
+                                   />
+                        </Border>
+
+                        <Grid Grid.Column="1" Margin="20,20,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition  Height="40"/>
+                                <RowDefinition  />
+                            </Grid.RowDefinitions>
+                            <Label Text="{Binding Filename}" FontSize="22" LineBreakMode="TailTruncation" Grid.Row="0"/>
+                            <Label Text="{Binding Date}" FontSize="14" TextColor="Silver"  VerticalOptions="End" Grid.Row="1"/>
+                        </Grid>
+                        <Border Grid.Column="2"
+                           StrokeThickness="0"
+                           HeightRequest="50"
+                           WidthRequest="50"
+                           HorizontalOptions="End">
+                                <Image Source="go_to.png"
+                                    Aspect="Fill"
+                                    HeightRequest="25"
+                                    WidthRequest="25" />
+                        </Border>
+                    </Grid>
+                </Border>
+            </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+</ContentPage>
